@@ -9,6 +9,13 @@
 @import 'components/_footer.scss';
 @import 'components/_ui.scss';
 @import 'pages/index/_main.scss';
+@import 'pages/index/_products.scss';
+@import 'pages/index/_about.scss';
+@import 'pages/index/_reliably.scss';
+@import 'pages/index/_partners.scss';
+
+// AOS styles
+@import './components/_aos.scss';
 
 ::selection {
 }
@@ -16,6 +23,10 @@
 body {
   font-family: Commissioner;
   font-weight: 700;
+
+  &._lock {
+    overflow: hidden;
+  }
 }
 
 .container {
