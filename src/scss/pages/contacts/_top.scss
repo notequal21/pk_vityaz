@@ -1,0 +1,127 @@
+.contacts_top {
+  position: relative;
+
+  &::before {
+    content: '';
+    display: block;
+    background: #f3f5fa;
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 34px;
+
+    background-image: url(../img/contacts/circles.svg);
+    background-position: right;
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    clip-path: polygon(0 0, 97.5% 0, 100% 100%, 0% 100%);
+
+    @media (max-width: 991px) {
+      background-image: none;
+    }
+
+    @media (max-width: 767px) {
+      right: 12px;
+      clip-path: polygon(0 0, 97% 0, 100% 100%, 0% 100%);
+    }
+  }
+
+  &::after {
+    content: '';
+    display: block;
+    position: absolute;
+    z-index: -2;
+    top: 20px;
+    right: 18px;
+    bottom: 0.5px;
+    left: 0;
+    background-color: #e0222d;
+    clip-path: polygon(0 0, 96.75% 0, 100% 100%, 0% 100%);
+
+    @media (max-width: 1300px) {
+      clip-path: polygon(0 0, 96% 0, 100% 100%, 0% 100%);
+    }
+    @media (max-width: 767px) {
+      top: 0;
+      right: 0;
+      clip-path: polygon(0 0, 95% 0, 100% 100%, 0% 100%);
+    }
+    @media (max-width: 500px) {
+      top: 0;
+      right: 0;
+      clip-path: polygon(0 0, 94% 0, 100% 100%, 0% 100%);
+    }
+    @media (max-width: 380px) {
+      top: 0;
+      right: 0;
+      clip-path: polygon(0 0, 93% 0, 100% 100%, 0% 100%);
+    }
+  }
+
+  &__circles {
+    position: absolute;
+  }
+
+  &-body {
+    padding: 38px 0 32px;
+  }
+
+  &-breadcrumbs {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    @media (max-width: 767px) {
+    }
+
+    a {
+      display: inline-flex;
+      gap: 10px;
+      align-items: center;
+      color: #6f7794;
+      font-family: Commissioner;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+
+      @media (max-width: 767px) {
+        font-size: 12px;
+      }
+
+      &:not(:last-child) {
+        &::after {
+          content: '';
+          display: block;
+          width: 12px;
+          height: 10px;
+          background-image: url(../img/icons/arrow-to.svg);
+          background-repeat: no-repeat;
+          background-size: contain;
+          background-position: center;
+        }
+      }
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  &__title {
+    margin: 8px 0 0;
+    color: #000;
+    font-family: Commissioner;
+    font-size: 45px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+
+    @media (max-width: 767px) {
+      font-size: 31px;
+    }
+  }
+}

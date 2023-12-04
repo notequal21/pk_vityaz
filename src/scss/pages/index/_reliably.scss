@@ -9,6 +9,180 @@
     }
   }
 
+  &.production_info {
+    margin: 44px 0 0;
+
+    @media (max-width: 767px) {
+      margin: 25px 0 0;
+    }
+
+    .reliably-body__card {
+      justify-content: space-between;
+
+      @media (max-width: 767px) {
+        padding: 0 20px 10px;
+      }
+
+      &-title {
+        font-size: 26px;
+        max-width: 450px;
+        white-space: unset;
+
+        @media (max-width: 767px) {
+          font-size: 22px;
+        }
+      }
+      .reliably-body__card-info {
+        padding: 0 30px 0 0;
+        max-width: 450px;
+
+        @media (max-width: 767px) {
+          padding: 0;
+        }
+      }
+      .reliably-body__card-img {
+        position: relative;
+        margin: 0 -150px 0 0;
+
+        img {
+          clip-path: polygon(8% 0, 100% 0%, 100% 100%, 0% 100%);
+        }
+
+        @media (max-width: 767px) {
+          transform: translate(-10px, 0) !important;
+        }
+
+        &::after {
+          content: '';
+          display: block;
+          position: absolute;
+          z-index: -1;
+          left: 0;
+          top: 0;
+          bottom: 0;
+          width: calc(100% + 20px);
+          background: #e0222d;
+          clip-path: polygon(0 0, 92% 0%, 100% 100%, 0% 100%);
+
+          right: 0;
+          left: auto;
+          clip-path: polygon(8% 0, 100% 0%, 100% 100%, 0% 100%);
+
+          @media (max-width: 767px) {
+            width: calc(100% + 10px);
+          }
+        }
+      }
+    }
+  }
+
+  &.reliably_employees {
+    margin: 0;
+
+    .reliably-body__card-info {
+      padding: 0 !important;
+    }
+
+    .reliably-body {
+      margin: 0;
+
+      &__card {
+        display: flex;
+        align-items: center;
+        flex-direction: row-reverse;
+
+        @media (max-width: 767px) {
+          margin: 25px 0 0;
+          &:not(:first-child) {
+            margin: 40px 0 0;
+          }
+        }
+
+        @media (max-width: 767px) {
+          flex-direction: column;
+          align-items: unset;
+          padding: 0 20px;
+          flex-direction: column !important;
+        }
+
+        &:nth-child(even) {
+          flex-direction: row;
+        }
+
+        .reliably-body__card-info {
+          padding: 0 0 50px;
+        }
+        .reliably-body__card-img {
+          position: relative;
+          margin: 0 0 0 -150px;
+          img {
+            clip-path: polygon(0 0, 92% 0%, 100% 100%, 0% 100%);
+          }
+
+          &::after {
+            content: '';
+            display: block;
+            position: absolute;
+            z-index: -1;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: calc(100% + 20px);
+            background: #e0222d;
+            clip-path: polygon(0 0, 92% 0%, 100% 100%, 0% 100%);
+
+            @media (max-width: 767px) {
+              width: calc(100% + 10px);
+            }
+          }
+        }
+        &:nth-child(even) {
+          .reliably-body__card-img {
+            margin: 0 -150px 0 0;
+
+            @media (max-width: 767px) {
+              transform: translate(-10px, 0) !important;
+            }
+
+            img {
+              clip-path: polygon(8% 0, 100% 0%, 100% 100%, 0% 100%);
+            }
+
+            &::after {
+              right: 0;
+              left: auto;
+              clip-path: polygon(8% 0, 100% 0%, 100% 100%, 0% 100%);
+            }
+          }
+        }
+        &:nth-child(1) {
+          .reliably-body__card-img {
+            transform: translate(-20px, 0);
+          }
+          .reliably-body__card-info {
+            margin: 0 0 0 90px;
+
+            @media (max-width: 991px) {
+              margin: 0 0 0 40px;
+            }
+          }
+        }
+        &:nth-child(2) {
+          .reliably-body__card-img {
+            transform: translate(20px, 0);
+          }
+          .reliably-body__card-info {
+            margin: 0 144px 0 0;
+
+            @media (max-width: 991px) {
+              margin: 0 40px 0 0;
+            }
+          }
+        }
+      }
+    }
+  }
+
   &__title {
     color: #000;
     font-family: Commissioner;

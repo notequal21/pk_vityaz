@@ -1,0 +1,316 @@
+.modal {
+  position: fixed;
+  z-index: 20;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  pointer-events: none;
+  user-select: none;
+  visibility: hidden;
+
+  &._open {
+    pointer-events: unset;
+    user-select: unset;
+    visibility: visible;
+
+    .modal__bg {
+      opacity: 1;
+    }
+
+    .modal-content {
+      transform: translate(0);
+      opacity: 1;
+    }
+  }
+
+  &.modal_application {
+  }
+
+  &.modal_thanks {
+    .modal-body {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      align-items: center;
+
+      &__icon {
+        width: 70px;
+        height: 70px;
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: contain;
+        }
+      }
+
+      &__title {
+        margin: 30px 0 0;
+      }
+
+      &__text {
+        margin: 18px 0 0;
+        color: #000;
+        text-align: center;
+        font-family: Commissioner;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 24px;
+      }
+
+      &__btn {
+        cursor: pointer;
+        margin: 24px 0 0;
+
+        &:hover {
+          opacity: 0.9;
+        }
+      }
+    }
+  }
+
+  &__bg {
+    position: absolute;
+    z-index: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(18, 18, 18, 0.72);
+    opacity: 0;
+    transition: all 0.3s ease;
+  }
+
+  &-content {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    padding: 20px;
+    max-width: 634px;
+    max-height: 100%;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+
+    transform: translate(0, 50%);
+    opacity: 0;
+
+    transition: all 0.4s ease;
+  }
+
+  &-body {
+    position: relative;
+    background: #fff;
+    padding: 40px 80px 70px;
+    min-height: 434px;
+
+    @media (max-width: 767px) {
+      padding: 20px 20px 25px;
+    }
+
+    &__close {
+      cursor: pointer;
+      position: absolute;
+      top: 18px;
+      right: 18px;
+      width: 12px;
+      height: 12px;
+
+      @media (max-width: 767px) {
+        top: 30px;
+        right: 20px;
+      }
+
+      &:hover {
+        svg {
+          path {
+            fill: #000;
+          }
+        }
+      }
+
+      svg {
+        width: 100%;
+        height: 100%;
+
+        path {
+          transition: all 0.3s ease;
+        }
+      }
+    }
+
+    &__title {
+      color: #000;
+      font-family: Commissioner;
+      font-size: 28px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+      text-align: center;
+
+      @media (max-width: 767px) {
+        text-align: left;
+        font-size: 24px;
+      }
+    }
+
+    &__item {
+      display: flex;
+      align-items: center;
+      margin: 44px 0 0;
+      border: 1px solid #d5d5d5;
+
+      @media (max-width: 767px) {
+        margin: 18px 0 0;
+      }
+
+      &-img {
+        width: 104px;
+        height: 88px;
+
+        @media (max-width: 767px) {
+          width: 40px;
+          height: 40px;
+        }
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+
+      &-name {
+        color: #161616;
+        font-family: Commissioner;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        padding: 0 15px 0 26px;
+
+        @media (max-width: 767px) {
+          padding: 0 10px 0 24px;
+        }
+      }
+    }
+
+    &__form {
+      margin: 44px 0 0;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+
+      @media (max-width: 767px) {
+        margin: 18px 0 0;
+      }
+
+      .just-validate-error-label {
+        display: none;
+      }
+
+      label {
+        width: 100%;
+
+        input {
+          width: 100%;
+          display: flex;
+          align-items: center;
+          height: 60px;
+          border-radius: 8px;
+          border: 1px solid #c9d3e6;
+          background: #f3f5fa;
+          padding: 0 30px;
+
+          font-family: Commissioner;
+          font-size: 16px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: normal;
+
+          transition: all 0.3s ease;
+
+          &.just-validate-error-field {
+            border-color: #e0222d;
+          }
+
+          @media (max-width: 767px) {
+            height: 45px;
+            padding: 0 14px;
+            font-size: 14px;
+          }
+
+          &::placeholder {
+            color: #677687;
+          }
+        }
+
+        &._checkbox {
+          cursor: pointer;
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          padding: 13px 0;
+
+          input {
+            display: none;
+
+            &.just-validate-error-field + span {
+              border-color: #e0222d;
+            }
+
+            &:checked + span {
+              &::after {
+                opacity: 1;
+                transform: scale(1) translate(-50%, -50%);
+              }
+            }
+          }
+
+          span {
+            position: relative;
+            width: 26px;
+            height: 26px;
+            border: 1px solid #c9d3e6;
+            background: #f3f5fa;
+
+            transition: all 0.3s ease;
+
+            &::after {
+              content: '';
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              width: calc(100% - 10px);
+              height: calc(100% - 10px);
+              background-color: #e0222d;
+
+              opacity: 0;
+              transform: scale(0) translate(-50%, -50%);
+              transform-origin: left;
+              transition: all 0.3s ease;
+            }
+          }
+
+          color: #677687;
+          font-family: Commissioner;
+          font-size: 14px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: normal;
+        }
+      }
+
+      button {
+        justify-content: center;
+      }
+    }
+  }
+}

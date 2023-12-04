@@ -8,11 +8,16 @@
 @import 'components/_header.scss';
 @import 'components/_footer.scss';
 @import 'components/_ui.scss';
+@import 'components/_modal.scss';
 @import 'pages/index/_main.scss';
 @import 'pages/index/_products.scss';
 @import 'pages/index/_about.scss';
 @import 'pages/index/_reliably.scss';
 @import 'pages/index/_partners.scss';
+@import 'pages/about/_main.scss';
+@import 'pages/contacts/index.scss';
+@import 'pages/products/index.scss';
+@import 'pages/production/index.scss';
 
 // AOS styles
 @import './components/_aos.scss';
