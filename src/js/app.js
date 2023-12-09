@@ -4,3 +4,4 @@ functions.aosInit();
 functions.burger();
 functions.toggleSearch();
 functions.modal();
+functions.lineCardAnim();

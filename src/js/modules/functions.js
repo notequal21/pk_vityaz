@@ -196,3 +196,24 @@ export const modal = () => {
     });
   }
 };
+
+export const lineCardAnim = () => {
+  if (document.querySelector('.line_card')) {
+    const targetArr = document.querySelectorAll('.line_card');
+
+    targetArr.forEach((target, index) => {
+      function handleIntersection(entries) {
+        entries.map((entry) => {
+          if (entry.isIntersecting) {
+            target.classList.add('_active');
+          }
+        });
+      }
+
+      const observer = new IntersectionObserver(handleIntersection, {
+        threshold: 0.6,
+      });
+      observer.observe(target);
+    });
+  }
+};
